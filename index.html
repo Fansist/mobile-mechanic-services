@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Mechanic Services | Mobile Auto Repair in San Diego, CA</title>
+<meta name="description" content="Mobile Mechanic Services brings certified auto repair straight to your driveway anywhere in San Diego. Diagnostics, brakes, transmission, suspension &amp; more since 2010. Call (619) 765-9319.">
+<meta name="theme-color" content="#0a0e14">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Archivo+Expanded:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ===== Palette: garage-on-wheels — asphalt navy, safety orange, hazard yellow ===== */
+    --asphalt-950:#0a0e14;
+    --asphalt-900:#0e1420;
+    --navy-800:#131c2b;
+    --navy-700:#1b2740;
+    --navy-600:#233252;
+    --steel-500:#5c6d84;
+    --steel-300:#8fa0b5;
+    --fog-100:#eef1f5;
+    --fog-050:#f7f8fa;
+    --white:#ffffff;
+    --orange-600:#ff5f0a;
+    --orange-700:#e04f04;
+    --orange-300:#ffab6b;
+    --hazard-yellow:#ffc93c;
+    --ink:#12161d;
+    --focus-ring:#ffc93c;
+
+    --radius-lg:18px;
+    --radius-md:12px;
+    --radius-sm:8px;
+    --shadow-xl:0 32px 70px -24px rgba(4,8,14,.55);
+    --shadow-lg:0 22px 48px -18px rgba(4,8,14,.45);
+    --shadow-md:0 12px 28px -12px rgba(4,8,14,.38);
+    --shadow-sharp:0 4px 0 0 rgba(0,0,0,.28);
+    --maxw:1220px;
+
+    --font-display:'Anton',sans-serif;
+    --font-head:'Archivo Expanded',sans-serif;
+    --font-body:'Archivo',sans-serif;
+
+    --dur-fast:160ms;
+    --dur-normal:280ms;
+    --ease:cubic-bezier(.19,1,.22,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--fog-050);
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  /* reusable subtle grain data-uri for tactile, non-flat depth on dark surfaces */
+  :root{
+    --grain-uri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:var(--font-head);
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    line-height:1.06;
+    margin:0 0 .5em;
+    color:var(--navy-800);
+    font-weight:800;
+  }
+  .display{font-family:var(--font-display);font-weight:400;letter-spacing:.01em;}
+  p{margin:0 0 1em;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,32px);}
+  section{position:relative;}
+
+  /* ============ FOCUS & MOTION-SAFE REVEAL ============ */
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--focus-ring);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .7s var(--ease),transform .7s var(--ease);
+  }
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .reveal-group.is-visible .reveal-item{opacity:1;transform:translateY(0);}
+  .reveal-item{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .6s var(--ease),transform .6s var(--ease);
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+    .reveal,.reveal-item{opacity:1 !important;transform:none !important;}
+  }
+
+  /* Skip link */
+  .skip-link{
+    position:absolute;
+    left:-999px;top:auto;
+    background:var(--hazard-yellow);
+    color:var(--ink);
+    padding:14px 22px;
+    z-index:2000;
+    font-weight:700;
+    font-family:var(--font-head);
+    text-transform:uppercase;
+    border-radius:0 0 8px 0;
+    text-decoration:none;
+  }
+  .skip-link:focus{left:0;top:0;}
+
+  /* ============ HEADER ============ */
+  .site-header{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(10,14,20,.92);
+    backdrop-filter:blur(10px) saturate(140%);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 1px 0 var(--orange-600);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px clamp(20px,4vw,32px);
+    gap:16px;
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    text-decoration:none;color:var(--white);
+    font-family:var(--font-head);font-weight:800;
+    font-size:1.02rem;letter-spacing:.02em;text-transform:uppercase;
+  }
+  .brand-mark{width:44px;height:44px;flex:none;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.18;}
+  .brand-text small{
+    font-family:var(--font-body);font-size:.62rem;letter-spacing:.14em;
+    color:var(--orange-300);font-weight:600;text-transform:uppercase;
+  }
+
+  .main-nav ul{list-style:none;display:flex;gap:2px;margin:0;padding:0;}
+  .main-nav a{
+    display:inline-block;padding:10px 16px;text-decoration:none;
+    color:var(--fog-100);font-weight:600;font-size:.9rem;
+    border-radius:8px;transition:background var(--dur-fast) ease,color var(--dur-fast) ease;
+  }
+  .main-nav a:hover{background:rgba(255,95,10,.18);color:var(--white);}
+
+  .header-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--orange-600);color:var(--white);
+    font-weight:700;font-family:var(--font-head);letter-spacing:.02em;
+    text-transform:uppercase;padding:12px 20px;border-radius:999px;
+    text-decoration:none;font-size:.86rem;
+    box-shadow:var(--shadow-sharp);
+    transition:transform var(--dur-fast) ease,box-shadow var(--dur-fast) ease,background var(--dur-fast) ease;
+    white-space:nowrap;
+    border:1px solid rgba(255,255,255,.15);
+  }
+  .header-cta:hover{background:var(--orange-700);transform:translateY(-2px);box-shadow:0 8px 0 0 rgba(0,0,0,.28);}
+  .header-cta:active{transform:translateY(0);box-shadow:0 2px 0 0 rgba(0,0,0,.28);}
+
+  .nav-toggle{
+    display:none;background:transparent;border:2px solid var(--orange-600);
+    color:var(--white);border-radius:8px;padding:8px 10px;cursor:pointer;
+  }
+  .nav-toggle svg{width:22px;height:22px;display:block;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    color:var(--white);
+    overflow:hidden;
+    padding:clamp(56px,9vw,108px) 0 clamp(64px,8vw,100px);
+    background:var(--asphalt-950);
+    isolation:isolate;
+  }
+  .hero-photo-bg{
+    position:absolute;inset:0;z-index:-2;
+    background-image:url('photos/photo1.jpg');
+    background-size:cover;
+    background-position:center 30%;
+    filter:saturate(1.05) contrast(1.05);
+    transform:scale(1.04);
+  }
+  .hero-scrim{
+    position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(100deg,rgba(9,13,19,.97) 0%,rgba(9,13,19,.93) 34%,rgba(10,14,20,.72) 58%,rgba(10,14,20,.5) 100%),
+      linear-gradient(0deg,rgba(6,9,13,.85) 0%,transparent 40%);
+  }
+  .hero-diagonal{
+    position:absolute;right:-10%;top:0;bottom:0;width:60%;z-index:-1;
+    background:repeating-linear-gradient(115deg,rgba(255,201,60,.05) 0 3px,transparent 3px 46px);
+    pointer-events:none;
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1fr;gap:36px;align-items:end;
+  }
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:rgba(255,95,10,.15);border:1px solid rgba(255,95,10,.45);
+    color:var(--orange-300);font-family:var(--font-head);font-size:.74rem;
+    letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    padding:8px 16px;border-radius:999px;margin-bottom:24px;
+  }
+  .hero-eyebrow svg{width:14px;height:14px;flex:none;}
+  .hero h1{
+    color:var(--white);
+    font-family:var(--font-display);
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(2.6rem,6.4vw,5.4rem);
+    line-height:.98;
+    margin-bottom:.3em;
+    max-width:16ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--orange-600);
+    -webkit-text-stroke:1px rgba(255,255,255,.15);
+  }
+  .hero-tagline{
+    font-size:clamp(1.05rem,1.6vw,1.3rem);
+    color:var(--fog-100);
+    max-width:52ch;
+    margin-bottom:1.7em;
+    font-weight:400;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:2.6em;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-head);text-transform:uppercase;letter-spacing:.02em;
+    font-weight:700;font-size:1rem;padding:17px 28px;border-radius:10px;
+    text-decoration:none;
+    transition:transform var(--dur-fast) ease,box-shadow var(--dur-fast) ease,background var(--dur-fast) ease;
+    border:2px solid transparent;
+  }
+  .btn svg{width:20px;height:20px;flex:none;}
+  .btn-primary{
+    background:var(--orange-600);color:var(--white);
+    box-shadow:0 6px 0 0 var(--orange-700);
+  }
+  .btn-primary:hover{background:#ff7328;transform:translateY(-3px);box-shadow:0 9px 0 0 var(--orange-700);}
+  .btn-primary:active{transform:translateY(2px);box-shadow:0 3px 0 0 var(--orange-700);}
+  .btn-secondary{
+    background:rgba(255,255,255,.05);color:var(--white);
+    border-color:rgba(255,255,255,.35);
+    backdrop-filter:blur(4px);
+  }
+  .btn-secondary:hover{border-color:var(--hazard-yellow);background:rgba(255,201,60,.1);transform:translateY(-3px);}
+  .btn-secondary:active{transform:translateY(0);}
+
+  .hero-badges{display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,34px);}
+  .hero-badge{display:flex;align-items:center;gap:11px;color:var(--steel-300);font-size:.92rem;}
+  .hero-badge svg{width:24px;height:24px;color:var(--orange-600);flex:none;}
+  .hero-badge strong{color:var(--white);font-family:var(--font-head);letter-spacing:.01em;font-weight:700;}
+
+  .hero-photo-credit{
+    position:absolute;right:clamp(20px,4vw,32px);bottom:20px;z-index:1;
+    font-size:.72rem;color:rgba(255,255,255,.55);
+    font-family:var(--font-body);letter-spacing:.03em;
+  }
+
+  /* ============ MARQUEE STRIP ============ */
+  .marquee-strip{
+    background:var(--orange-600);color:var(--ink);
+    overflow:hidden;white-space:nowrap;
+    border-top:1px solid rgba(0,0,0,.15);
+    border-bottom:1px solid rgba(0,0,0,.15);
+    background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.06) 0 2px,transparent 2px 18px);
+  }
+  .marquee-track{display:inline-flex;animation:scroll-left 34s linear infinite;padding:13px 0;}
+  .marquee-track span{
+    font-family:var(--font-head);font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    font-size:.86rem;padding:0 28px;display:inline-flex;align-items:center;gap:10px;
+  }
+  @keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ============ SECTION HEADINGS ============ */
+  .section-head{max-width:680px;margin:0 auto 52px;text-align:center;}
+  .eyebrow{
+    display:inline-block;font-family:var(--font-head);color:var(--orange-700);
+    letter-spacing:.13em;text-transform:uppercase;font-size:.78rem;font-weight:700;
+    margin-bottom:14px;
+  }
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.9rem);}
+  .section-head p{color:var(--steel-500);font-size:clamp(1rem,1.4vw,1.14rem);}
+
+  /* ============ ABOUT ============ */
+  .about{padding:clamp(64px,9vw,116px) 0;background:var(--white);}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,64px);align-items:center;}
+  .about-art{
+    position:relative;
+    background:linear-gradient(155deg,var(--navy-800),var(--navy-600));
+    border-radius:var(--radius-lg);
+    padding:clamp(28px,4vw,44px);
+    box-shadow:var(--shadow-xl);
+    overflow:hidden;
+    aspect-ratio:4/5;
+    display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .about-art::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(135deg,rgba(255,95,10,.08) 0 2px,transparent 2px 24px);
+  }
+  .about-art::after{
+    content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;pointer-events:none;
+    background-image:var(--grain-uri);
+  }
+  .about-art-badge{
+    position:relative;z-index:1;
+    background:rgba(10,14,20,.55);
+    border:1px solid rgba(255,201,60,.35);
+    border-radius:var(--radius-md);
+    padding:22px 24px;
+    backdrop-filter:blur(6px);
+  }
+  .about-art-badge .display{
+    color:var(--hazard-yellow);
+    font-size:clamp(2rem,4vw,2.8rem);
+    display:block;
+    margin-bottom:2px;
+  }
+  .about-art-badge span{color:var(--fog-100);font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;font-family:var(--font-head);font-weight:700;}
+  .about-art-icon{position:relative;z-index:1;margin-bottom:auto;}
+  .about-art-icon svg{width:64px;height:64px;color:var(--orange-600);}
+
+  .about-copy .eyebrow{margin-bottom:10px;}
+  .about-copy h2{margin-bottom:.6em;}
+  .about-copy p{color:var(--steel-500);font-size:1.06rem;}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+  .about-stat{
+    background:var(--fog-100);border-radius:var(--radius-sm);padding:20px 14px;text-align:center;
+    border-bottom:4px solid var(--orange-600);
+    transition:transform var(--dur-normal) var(--ease);
+  }
+  .about-stat:hover{transform:translateY(-4px);}
+  .about-stat strong{display:block;font-family:var(--font-display);font-size:2rem;color:var(--navy-800);}
+  .about-stat span{font-size:.8rem;color:var(--steel-500);text-transform:uppercase;letter-spacing:.04em;}
+
+  /* ============ SERVICES ============ */
+  .services{
+    padding:clamp(64px,9vw,116px) 0;
+    background:linear-gradient(180deg,var(--asphalt-900),var(--navy-800));
+    color:var(--white);
+    position:relative;
+  }
+  .services .section-head p{color:var(--steel-300);}
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{
+    background:var(--navy-700);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:var(--radius-md);
+    padding:28px 22px;
+    transition:transform var(--dur-normal) var(--ease),box-shadow var(--dur-normal) var(--ease),border-color var(--dur-normal) var(--ease),background var(--dur-normal) var(--ease);
+  }
+  .service-card:hover,.service-card:focus-within{
+    transform:translateY(-7px);
+    border-color:var(--orange-600);
+    box-shadow:var(--shadow-xl);
+    background:var(--navy-600);
+  }
+  .service-icon{
+    width:50px;height:50px;border-radius:10px;
+    background:rgba(255,95,10,.15);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    transition:background var(--dur-normal) ease,transform var(--dur-normal) ease;
+  }
+  .service-card:hover .service-icon{background:var(--orange-600);transform:rotate(-6deg) scale(1.05);}
+  .service-icon svg{width:26px;height:26px;color:var(--orange-300);transition:color var(--dur-normal) ease;}
+  .service-card:hover .service-icon svg{color:var(--white);}
+  .service-card h3{
+    color:var(--white);font-size:1.05rem;margin-bottom:.4em;
+    text-transform:none;letter-spacing:0;font-family:var(--font-body);font-weight:700;
+  }
+  .service-card p{color:var(--steel-300);font-size:.92rem;margin:0;}
+
+  /* ============ HIGHLIGHTS STRIP ============ */
+  .highlights{padding:clamp(56px,7vw,86px) 0;background:var(--fog-100);}
+  .highlights-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .highlight-card{
+    background:var(--white);border-radius:var(--radius-md);padding:30px 24px;text-align:center;
+    box-shadow:var(--shadow-md);border-top:4px solid var(--orange-600);
+    transition:transform var(--dur-normal) var(--ease),box-shadow var(--dur-normal) var(--ease);
+  }
+  .highlight-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .highlight-icon{
+    width:56px;height:56px;margin:0 auto 16px;border-radius:50%;
+    background:var(--navy-800);display:flex;align-items:center;justify-content:center;
+  }
+  .highlight-icon svg{width:28px;height:28px;color:var(--orange-600);}
+  .highlight-card strong{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--navy-800);letter-spacing:.01em;}
+  .highlight-card span{color:var(--steel-500);font-size:.92rem;}
+
+  /* ============ GALLERY (single verified photo, styled two ways) ============ */
+  .gallery{padding:clamp(64px,9vw,116px) 0;background:var(--white);}
+  .gallery-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;}
+  .gallery-photo{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl);
+    aspect-ratio:16/10;
+  }
+  .gallery-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .gallery-photo-caption{
+    position:absolute;left:0;right:0;bottom:0;
+    background:linear-gradient(0deg,rgba(9,13,19,.92) 15%,transparent 100%);
+    color:var(--fog-100);font-size:.88rem;padding:36px 22px 16px;
+    font-family:var(--font-head);letter-spacing:.02em;font-weight:700;text-transform:uppercase;
+  }
+  .gallery-fact{
+    background:linear-gradient(155deg,var(--navy-800),var(--navy-600));
+    border-radius:var(--radius-lg);
+    color:var(--white);
+    padding:clamp(28px,4vw,40px);
+    display:flex;flex-direction:column;justify-content:center;gap:18px;
+    box-shadow:var(--shadow-xl);
+    position:relative;overflow:hidden;
+  }
+  .gallery-fact::before{
+    content:"";position:absolute;inset:0;opacity:.4;mix-blend-mode:overlay;pointer-events:none;
+    background-image:var(--grain-uri);
+  }
+  .gallery-fact::after{
+    content:"";position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;
+    background:radial-gradient(circle,rgba(255,95,10,.28),transparent 70%);
+  }
+  .gallery-fact svg{width:38px;height:38px;color:var(--hazard-yellow);position:relative;z-index:1;}
+  .gallery-fact p{color:var(--steel-300);margin:0;position:relative;z-index:1;font-size:.98rem;}
+  .gallery-fact strong{color:var(--white);font-family:var(--font-head);font-size:1.1rem;position:relative;z-index:1;text-transform:uppercase;letter-spacing:.01em;}
+
+  /* ============ FAQ ============ */
+  .faq{padding:clamp(64px,9vw,116px) 0;background:var(--fog-050);}
+  .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{
+    background:var(--white);border-radius:var(--radius-md);border:1px solid #e2e7ec;
+    box-shadow:var(--shadow-md);overflow:hidden;
+  }
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:22px 26px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    font-family:var(--font-head);font-weight:700;font-size:1.02rem;color:var(--navy-800);
+    text-transform:none;letter-spacing:0;
+    transition:background var(--dur-fast) ease;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary:hover{background:var(--fog-100);}
+  .faq-icon{
+    flex:none;width:30px;height:30px;border-radius:50%;background:var(--fog-100);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform var(--dur-normal) var(--ease),background var(--dur-normal) ease;
+  }
+  .faq-icon svg{width:16px;height:16px;color:var(--orange-600);}
+  .faq-item[open] .faq-icon{transform:rotate(45deg);background:var(--orange-600);}
+  .faq-item[open] .faq-icon svg{color:var(--white);}
+  .faq-answer{padding:0 26px 24px;color:var(--steel-500);font-size:.98rem;}
+  .faq-answer p{margin:0;}
+
+  /* ============ VISIT ============ */
+  .visit{padding:clamp(64px,9vw,116px) 0;background:var(--white);}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px);}
+  .visit-card{
+    background:linear-gradient(160deg,var(--asphalt-900),var(--navy-700));
+    color:var(--white);border-radius:var(--radius-lg);padding:clamp(30px,4vw,44px);
+    box-shadow:var(--shadow-xl);position:relative;overflow:hidden;
+  }
+  .visit-card::before{
+    content:"";position:absolute;inset:0;opacity:.4;mix-blend-mode:overlay;pointer-events:none;
+    background-image:var(--grain-uri);
+  }
+  .visit-card::after{
+    content:"";position:absolute;right:-40px;bottom:-40px;width:190px;height:190px;
+    background:radial-gradient(circle,rgba(255,95,10,.26),transparent 70%);
+  }
+  .visit-card h2{color:var(--white);margin-bottom:1em;position:relative;z-index:1;}
+  .visit-card .eyebrow{position:relative;z-index:1;display:inline-block;}
+  .visit-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px;position:relative;z-index:1;}
+  .visit-list li{display:flex;gap:16px;align-items:flex-start;}
+  .visit-list svg{width:24px;height:24px;color:var(--orange-600);flex:none;margin-top:2px;}
+  .visit-list strong{display:block;font-family:var(--font-head);letter-spacing:.02em;font-size:.88rem;text-transform:uppercase;color:var(--orange-300);margin-bottom:3px;font-weight:700;}
+  .visit-list a{color:var(--white);text-decoration:none;font-size:1.05rem;font-weight:600;}
+  .visit-list a:hover{text-decoration:underline;text-decoration-color:var(--orange-600);}
+  .visit-list p{margin:0;color:var(--steel-300);}
+
+  .hours-card{background:var(--fog-100);border-radius:var(--radius-lg);padding:clamp(30px,4vw,44px);}
+  .hours-card h2{margin-bottom:.3em;}
+  .hours-card .eyebrow{margin-bottom:10px;display:block;}
+  .hours-table{width:100%;border-collapse:collapse;margin:24px 0 26px;}
+  .hours-table th{
+    text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--steel-500);padding-bottom:10px;border-bottom:2px solid var(--navy-800);
+  }
+  .hours-table td{padding:13px 0;border-bottom:1px solid #d7dee5;font-size:.98rem;}
+  .hours-table td:first-child{font-weight:700;color:var(--navy-800);font-family:var(--font-head);letter-spacing:.01em;}
+  .hours-table td:last-child{text-align:right;color:var(--steel-500);}
+  .hours-note{
+    font-size:.9rem;color:var(--steel-500);background:var(--white);
+    border-left:3px solid var(--orange-600);padding:13px 16px;border-radius:0 8px 8px 0;
+  }
+  .map-cta{
+    display:inline-flex;align-items:center;gap:10px;margin-top:24px;
+    font-family:var(--font-head);text-transform:uppercase;letter-spacing:.02em;font-weight:700;
+    color:var(--navy-800);text-decoration:none;border-bottom:2px solid var(--orange-600);
+    padding-bottom:3px;transition:color var(--dur-fast) ease,gap var(--dur-fast) ease;
+  }
+  .map-cta:hover{color:var(--orange-700);gap:14px;}
+  .map-cta svg{width:20px;height:20px;color:var(--orange-600);}
+
+  /* ============ FINAL CTA ============ */
+  .final-cta{
+    padding:clamp(60px,8vw,96px) 0;
+    background:linear-gradient(120deg,var(--orange-600) 0%,var(--orange-700) 100%);
+    color:var(--ink);text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.05) 0 2px,transparent 2px 26px);
+    pointer-events:none;
+  }
+  .final-cta h2{color:var(--ink);font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,4.2vw,3.2rem);position:relative;}
+  .final-cta p{color:rgba(10,14,20,.8);font-size:1.12rem;max-width:56ch;margin:0 auto 1.8em;position:relative;}
+  .final-cta .btn-primary{background:var(--asphalt-950);color:var(--white);box-shadow:0 6px 0 0 #000;position:relative;}
+  .final-cta .btn-primary:hover{background:var(--navy-700);}
+
+  /* ============ FOOTER ============ */
+  .site-footer{background:var(--asphalt-950);color:var(--steel-300);padding:56px 0 28px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+    padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-brand svg{width:36px;height:36px;}
+  .footer-brand span{
+    font-family:var(--font-head);color:var(--white);font-size:1.02rem;
+    text-transform:uppercase;letter-spacing:.02em;font-weight:800;
+  }
+  .site-footer h3{color:var(--white);font-size:.82rem;letter-spacing:.1em;margin-bottom:16px;font-family:var(--font-head);}
+  .site-footer p{font-size:.92rem;max-width:38ch;}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{color:var(--steel-300);text-decoration:none;font-size:.92rem;transition:color var(--dur-fast) ease;}
+  .footer-links a:hover{color:var(--orange-300);}
+  .footer-bottom{
+    padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:.82rem;color:var(--steel-500);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:1024px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .highlights-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;}
+    .about-art{max-width:440px;margin:0 auto;aspect-ratio:16/10;}
+    .visit-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr;}
+    .gallery-photo{aspect-ratio:16/9;}
+  }
+
+  @media (max-width:860px){
+    .main-nav{
+      position:fixed;inset:70px 0 auto 0;background:var(--asphalt-950);
+      border-bottom:3px solid var(--orange-600);flex-direction:column;
+      padding:10px clamp(20px,4vw,32px) 24px;
+      transform:translateY(-120%);opacity:0;visibility:hidden;
+      transition:transform .3s var(--ease),opacity .3s var(--ease),visibility .3s;
+      max-height:calc(100vh - 70px);overflow-y:auto;
+    }
+    .main-nav.open{transform:translateY(0);opacity:1;visibility:visible;}
+    .main-nav ul{flex-direction:column;width:100%;gap:2px;}
+    .main-nav a{display:block;padding:14px 10px;border-bottom:1px solid rgba(255,255,255,.06);}
+    .header-cta{display:none;}
+    .main-nav .header-cta.mobile-only{display:inline-flex;margin-top:14px;width:fit-content;}
+    .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  }
+
+  @media (max-width:640px){
+    .services-grid{grid-template-columns:1fr;}
+    .highlights-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+    .footer-bottom{flex-direction:column;}
+    .visit-card,.hours-card{padding:26px 22px;}
+    .hero-ctas{flex-direction:column;align-items:stretch;}
+    .btn{justify-content:center;}
+    .hero-badges{flex-direction:column;gap:14px;}
+    .hero-photo-credit{position:static;margin-top:18px;}
+  }
+</style>
+      <!-- SEO:START (generated by _seo_inject.js) -->
+    <link rel="canonical" href="https://fansist.github.io/mobile-mechanic-services/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mobile Mechanic Services" />
+    <meta property="og:title" content="Mobile Mechanic Services: Repairs at Your Door" />
+    <meta property="og:description" content="Diagnostics, brakes, and transmission service wherever you are in San Diego, no shop visit needed." />
+    <meta property="og:url" content="https://fansist.github.io/mobile-mechanic-services/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://fansist.github.io/mobile-mechanic-services/photos/photo1.jpg" />
+    <meta property="og:image:alt" content="The business's actual white service truck, rear view, with 'MOBILE MECHANIC SERVICES' and the phone number 619-765-9319 painted on the tailgate, parked at a job" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mobile Mechanic Services: Repairs at Your Door" />
+    <meta name="twitter:description" content="Diagnostics, brakes, and transmission service wherever you are in San Diego, no shop visit needed." />
+    <meta name="twitter:image" content="https://fansist.github.io/mobile-mechanic-services/photos/photo1.jpg" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Mobile Mechanic Services","url":"https://fansist.github.io/mobile-mechanic-services/","image":["https://fansist.github.io/mobile-mechanic-services/photos/photo1.jpg"],"telephone":"(619) 765-9319","address":{"@type":"PostalAddress","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92108","addressCountry":"US"},"description":"Mobile auto repair outfit established in 2010, based in Mission Valley (San Diego 92108) and serving the whole metro. Certified, licensed mobile technicians arrive in fully equipped service trucks and fix cars on the spot at homes and workplaces: computer diagnostics, general auto repair, fuel pu...","areaServed":{"@type":"City","name":"San Diego"}}</script>
+    <!-- SEO:END -->
+  </head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Mobile Mechanic Services, home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="44" height="44" rx="10" fill="#ff5f0a"/>
+        <path d="M14 30l4-9a3 3 0 0 1 2.8-2h6.4a3 3 0 0 1 2.8 2l4 9" stroke="#0a0e14" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="11" y="29" width="26" height="7" rx="2.5" fill="#0a0e14"/>
+        <circle cx="17" cy="37" r="2.6" fill="#0a0e14"/>
+        <circle cx="31" cy="37" r="2.6" fill="#0a0e14"/>
+        <rect x="20" y="19" width="8" height="4" rx="1" fill="#0a0e14"/>
+      </svg>
+      <span class="brand-text">
+        Mobile Mechanic<br>Services
+        <small>San Diego Mobile Auto Repair</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#highlights">Why Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#visit">Visit / Hours</a></li>
+      </ul>
+      <a class="header-cta mobile-only" href="tel:+16197659319">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        (619) 765-9319
+      </a>
+    </nav>
+
+    <a class="header-cta" href="tel:+16197659319" aria-label="Call Mobile Mechanic Services at (619) 765-9319">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Call Now
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <svg id="icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-photo-bg" role="img" aria-label="The Mobile Mechanic Services truck, marked with the company name and phone number, parked at a job site in San Diego"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-diagonal" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A6 6 0 0 1 12 5a6 6 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Serving All of San Diego Since 2010
+        </span>
+        <h1>We come to <em>you</em>, anywhere in San Diego.</h1>
+        <p class="hero-tagline">Certified, licensed mobile technicians arrive in a fully equipped service truck and fix your car on the spot, at home, at work, or on the roadside.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+16197659319">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Call (619) 765-9319
+          </a>
+          <a class="btn btn-secondary" href="#services">See Our Services</a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.6-2.9 8.4-7 9.9-4.1-1.5-7-5.3-7-9.9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Certified &amp; Licensed</strong><br>mobile technicians</span>
+          </div>
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>
+            <span><strong>7 Days a Week</strong><br>early to evening</span>
+          </div>
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.3l-5.4 3 1.4-6-4.6-4 6.1-.5L12 4l2.5 5.8 6.1.5-4.6 4 1.4 6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span><strong>172 Yelp Reviews</strong><br>trusted since 2010</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="hero-photo-credit">Our service truck, photographed on the job in San Diego</span>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee-strip" role="presentation">
+    <div class="marquee-track" aria-hidden="true">
+      <span>&#9679; Brakes &amp; Rotors</span>
+      <span>&#9679; Computer Diagnostics</span>
+      <span>&#9679; Transmission Service</span>
+      <span>&#9679; Suspension &amp; Struts</span>
+      <span>&#9679; Fuel Pumps</span>
+      <span>&#9679; On-Site Repair Anywhere in San Diego</span>
+      <span>&#9679; Brakes &amp; Rotors</span>
+      <span>&#9679; Computer Diagnostics</span>
+      <span>&#9679; Transmission Service</span>
+      <span>&#9679; Suspension &amp; Struts</span>
+      <span>&#9679; Fuel Pumps</span>
+      <span>&#9679; On-Site Repair Anywhere in San Diego</span>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container about-grid">
+      <div class="about-art reveal" aria-hidden="true">
+        <div class="about-art-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 8v8M8.5 10l7 4M15.5 10l-7 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="about-art-badge">
+          <span class="display">EST. 2010</span>
+          <span>Mobile since day one</span>
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">About Us</span>
+        <h2 id="about-heading">A garage on wheels, built on trust</h2>
+        <p>Mobile Mechanic Services is a mobile auto repair outfit established in 2010, based in Mission Valley (San Diego 92108) and serving the whole metro. Certified, licensed mobile technicians arrive in fully equipped service trucks and fix cars on the spot at homes and workplaces, from computer diagnostics to brakes, suspension, and transmission service.</p>
+        <p>Open long hours seven days a week, which is a big selling point versus fixed shops: no waiting rooms, no towing, no taking a day off work. We bring the shop to your driveway.</p>
+        <div class="about-stats">
+          <div class="about-stat"><strong>2010</strong><span>Established</span></div>
+          <div class="about-stat"><strong>172</strong><span>Yelp Reviews</span></div>
+          <div class="about-stat"><strong>7</strong><span>Days a Week</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Fix</span>
+        <h2 id="services-heading">Full-service repair, right where you park</h2>
+        <p>From routine maintenance to major diagnostics, our truck carries the tools to get it done on-site.</p>
+      </div>
+
+      <div class="services-grid reveal-group">
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 9h4M7 13h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="14" r="1.4" fill="currentColor"/></svg>
+          </div>
+          <h3>Computer Diagnostics</h3>
+          <p>Check engine, ABS/SRS, transmission, and AC/heater diagnostics done right at your curb.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v8M8.5 10l7 4M15.5 10l-7 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>General Auto Repair</h3>
+          <p>All-around repair work handled by certified technicians with a fully stocked truck.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Brakes, Rotors &amp; Calipers</h3>
+          <p>Squeaks, grinding, or soft pedal, brake service and replacement wherever you're parked.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10v4M12 9v6M16 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Transmission Service</h3>
+          <p>Fluid service and repair to keep shifting smooth and your drivetrain protected.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4v6a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 14v6M14 14v6M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Fuel Pump Replacement</h3>
+          <p>Diagnosis and replacement for fuel delivery issues, done on-location.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 20V10l3-6h6l3 6v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 14h12" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Struts, Shocks &amp; Suspension</h3>
+          <p>Restore a smooth, controlled ride with full suspension diagnosis and repair.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Oil Changes &amp; Tune-Ups</h3>
+          <p>Routine maintenance and filter replacements to keep your car running its best.</p>
+        </article>
+
+        <article class="service-card reveal-item">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>On-Site Roadside Repair</h3>
+          <p>At home, at the office, or on the roadside, we bring the repair to wherever you are.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HIGHLIGHTS ============ -->
+  <section class="highlights" id="highlights" aria-labelledby="highlights-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why San Diego Trusts Us</span>
+        <h2 id="highlights-heading">The garage-on-wheels advantage</h2>
+      </div>
+      <div class="highlights-grid reveal-group">
+        <div class="highlight-card reveal-item">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9A6 6 0 0 1 12 5a6 6 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z" stroke="#ff5f0a" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Mission Valley</strong>
+          <span>Based centrally, serving all of San Diego</span>
+        </div>
+        <div class="highlight-card reveal-item">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 17.3l-5.4 3 1.4-6-4.6-4 6.1-.5L12 4l2.5 5.8 6.1.5-4.6 4 1.4 6z" stroke="#ff5f0a" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>172 Reviews</strong>
+          <span>Active, trusted Yelp presence with 373 photos</span>
+        </div>
+        <div class="highlight-card reveal-item">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.6-2.9 8.4-7 9.9-4.1-1.5-7-5.3-7-9.9V6l7-3z" stroke="#ff5f0a" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#ff5f0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Since 2010</strong>
+          <span>Certified &amp; licensed mobile technicians</span>
+        </div>
+        <div class="highlight-card reveal-item">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 3" stroke="#ff5f0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#ff5f0a" stroke-width="1.8"/></svg>
+          </div>
+          <strong>7 Days</strong>
+          <span>Open long hours, weekdays and weekends</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">On The Job</span>
+        <h2 id="gallery-heading">See the truck that comes to you</h2>
+      </div>
+      <div class="gallery-grid reveal-group">
+        <div class="gallery-photo reveal-item">
+          <img src="photos/photo1.jpg" alt="Rear view of the Mobile Mechanic Services truck, with 'Mobile Mechanic Services' and the phone number 619-765-9319 painted on the tailgate, parked at a San Diego job site." width="1200" height="750" decoding="async">
+          <span class="gallery-photo-caption">Marked, equipped, and ready to roll, our actual service truck</span>
+        </div>
+        <div class="gallery-fact reveal-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.6-2.9 8.4-7 9.9-4.1-1.5-7-5.3-7-9.9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <strong>Fully Equipped, Every Visit</strong>
+          <p>Every job starts with a truck stocked for diagnostics, brakes, suspension, and general repair, so most work gets done in a single visit, without a trip to a shop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <p>A few honest answers before you call.</p>
+      </div>
+      <div class="faq-list reveal-group">
+        <details class="faq-item reveal-item">
+          <summary>
+            Do you really come to my location?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="faq-answer"><p>Yes. Mobile Mechanic Services is a service-area business based in Mission Valley, the technician and fully equipped truck travel to your home, workplace, or roadside location anywhere in San Diego rather than you bringing the car to a shop.</p></div>
+        </details>
+        <details class="faq-item reveal-item">
+          <summary>
+            What kinds of repairs can be done on-site?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="faq-answer"><p>Computer diagnostics, brakes and rotors, suspension and struts, transmission service, fuel pump replacement, oil changes and tune-ups, and general auto repair are all handled on location. Call ahead with your symptoms and vehicle details so the technician can arrive prepared.</p></div>
+        </details>
+        <details class="faq-item reveal-item">
+          <summary>
+            What are your hours?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="faq-answer"><p>Open seven days a week, roughly 7:30am, 8:30pm on weekdays and 7am, 5-6:30pm on weekends. These are approximate hours based on public listings, so it's worth calling ahead to confirm same-day availability.</p></div>
+        </details>
+        <details class="faq-item reveal-item">
+          <summary>
+            How do I get a quote or schedule a visit?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="faq-answer"><p>Call (619) 765-9319 and describe your vehicle and the issue. Since every job and vehicle is different, pricing and scheduling are handled directly over the phone rather than through an online form.</p></div>
+        </details>
+        <details class="faq-item reveal-item">
+          <summary>
+            Are your technicians certified and licensed?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="faq-answer"><p>Yes, technicians are certified and licensed mobile mechanics who arrive in a fully equipped service truck built to handle repairs on-site.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit" id="visit" aria-labelledby="visit-heading">
+    <div class="container visit-grid">
+      <div class="visit-card reveal">
+        <span class="eyebrow" style="color:var(--orange-300);">Get In Touch</span>
+        <h2 id="visit-heading">We'll come to you</h2>
+        <ul class="visit-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+16197659319">(619) 765-9319</a>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A6 6 0 0 1 12 5a6 6 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <div>
+              <strong>Service Area</strong>
+              <p>Based in Mission Valley, San Diego 92108, serving all of San Diego as a mobile, service-area business.</p>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>
+            <div>
+              <strong>Hours</strong>
+              <p>Roughly 7:30am, 8:30pm weekdays, 7am, 5/6:30pm weekends</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hours-card reveal">
+        <span class="eyebrow">Hours (Approximate)</span>
+        <h2>When we're on the road</h2>
+        <table class="hours-table">
+          <thead>
+            <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday, Friday</td><td>~7:30 AM, 8:30 PM</td></tr>
+            <tr><td>Saturday</td><td>~7:00 AM, 5:00-6:30 PM</td></tr>
+            <tr><td>Sunday</td><td>~7:00 AM, 5:00-6:30 PM</td></tr>
+          </tbody>
+        </table>
+        <p class="hours-note">Hours are approximate based on public listings, call ahead to confirm same-day availability.</p>
+        <a class="map-cta" href="https://www.google.com/maps/search/?api=1&query=Mobile%20Mechanic%20Services%20San%20Diego%20CA%2092108" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A6 6 0 0 1 12 5a6 6 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          View Service Area on Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta" aria-labelledby="final-cta-heading">
+    <div class="container">
+      <h2 id="final-cta-heading">Car trouble? We're already on our way.</h2>
+      <p>Skip the tow, skip the waiting room. Call now and get a certified mobile mechanic dispatched to your location anywhere in San Diego.</p>
+      <a class="btn btn-primary" href="tel:+16197659319">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Call (619) 765-9319
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="44" height="44" rx="10" fill="#ff5f0a"/>
+            <path d="M14 30l4-9a3 3 0 0 1 2.8-2h6.4a3 3 0 0 1 2.8 2l4 9" stroke="#0a0e14" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="11" y="29" width="26" height="7" rx="2.5" fill="#0a0e14"/>
+            <circle cx="17" cy="37" r="2.6" fill="#0a0e14"/>
+            <circle cx="31" cy="37" r="2.6" fill="#0a0e14"/>
+            <rect x="20" y="19" width="8" height="4" rx="1" fill="#0a0e14"/>
+          </svg>
+          <span>Mobile Mechanic Services</span>
+        </div>
+        <p>Mobile auto repair anywhere in San Diego. Certified, licensed technicians in a fully equipped service truck, on-site since 2010.</p>
+      </div>
+      <div>
+        <h3>QUICK LINKS</h3>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#highlights">Why Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#visit">Visit / Hours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>CONTACT</h3>
+        <ul class="footer-links">
+          <li><a href="tel:+16197659319">(619) 765-9319</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Mobile%20Mechanic%20Services%20San%20Diego%20CA%2092108" target="_blank" rel="noopener noreferrer">Mission Valley, San Diego CA 92108</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mobile Mechanic Services. All rights reserved.</span>
+      <span>Mobile auto repair serving San Diego, CA since 2010.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        var isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      nav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && nav.classList.contains('open')){
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    }
+
+    // Scroll-reveal animation, safe no-op fallback if IO unsupported
+    if('IntersectionObserver' in window){
+      var targets = document.querySelectorAll('.reveal, .reveal-group');
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+      targets.forEach(function(t){ io.observe(t); });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-group').forEach(function(t){
+        t.classList.add('is-visible');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
